@@ -1,6 +1,8 @@
-﻿using Qbittorrent_dotnet.DTO.Torrent;
+﻿using Qbittorrent_dotnet.DTO.Sync;
+using Qbittorrent_dotnet.DTO.Torrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TorrentPeer = Qbittorrent_dotnet.DTO.Torrent.TorrentPeer;
 
 namespace Qbittorrent_dotnet.Torrents
 {
@@ -99,5 +101,10 @@ namespace Qbittorrent_dotnet.Torrents
         Task RenameFileAsync(string hash, int fileIndex, string newName);
 
         Task RenameFolderAsync(string hash, string oldFolderPath, string newFolderName);
+        Task<IList<TorrentPeer>> GetTorrentPeersAsync(string hash);
+        Task SetTorrentTagsAsync(IEnumerable<string> hashes, IEnumerable<string> tags);
+        Task SetTorrentPriorityAsync(IEnumerable<string> hashes, int priority);
+        Task SetTorrentLocationAsync(IEnumerable<string> hashes, string location);
+        Task<IList<TorrentContent>> GetTorrentContentAsync(string hash);
     }
 }

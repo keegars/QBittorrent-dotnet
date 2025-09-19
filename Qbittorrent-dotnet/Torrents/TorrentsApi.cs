@@ -418,6 +418,46 @@ namespace Qbittorrent_dotnet.Torrents
             await EnsureSuccess(resp).ConfigureAwait(false);
         }
 
+        public async Task<IList<TorrentPeer>> GetTorrentPeersAsync(string hash)
+        {
+            return await GetJsonAsync<IList<TorrentPeer>>($"/api/v2/torrents/peers?hash={hash}").ConfigureAwait(false);
+        }
+
+        public async Task SetTorrentTagsAsync(IEnumerable<string> hashes, IEnumerable<string> tags)
+        {
+            var resp = await PostFormAsync("/api/v2/torrents/setTags", new[]
+            {
+                new KeyValuePair<string, string>("hashes", string.Join("|", hashes)),
+                new KeyValuePair<string, string>("tags", string.Join(",", tags))
+            }).ConfigureAwait(false);
+            resp.EnsureSuccessStatusCode();
+        }
+
+        public async Task SetTorrentPriorityAsync(IEnumerable<string> hashes, int priority)
+        {
+            var resp = await PostFormAsync("/api/v2/torrents/setPriority", new[]
+            {
+                new KeyValuePair<string, string>("hashes", string.Join("|", hashes)),
+                new KeyValuePair<string, string>("priority", priority.ToString())
+            }).ConfigureAwait(false);
+            resp.EnsureSuccessStatusCode();
+        }
+
+        public async Task SetTorrentLocationAsync(IEnumerable<string> hashes, string location)
+        {
+            var resp = await PostFormAsync("/api/v2/torrents/setLocation", new[]
+            {
+                new KeyValuePair<string, string>("hashes", string.Join("|", hashes)),
+                new KeyValuePair<string, string>("location", location)
+            }).ConfigureAwait(false);
+            resp.EnsureSuccessStatusCode();
+        }
+
+        public async Task<IList<TorrentContent>> GetTorrentContentAsync(string hash)
+        {
+            return await GetJsonAsync<IList<TorrentContent>>($"/api/v2/torrents/content?hash={hash}").ConfigureAwait(false);
+        }
+
         private static string JoinHashes(IEnumerable<string> hashes)
         {
             if (hashes == null) return null;

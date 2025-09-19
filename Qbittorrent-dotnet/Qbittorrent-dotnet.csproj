@@ -62,9 +62,12 @@
     <Compile Include="DTO\Sync\TorrentPeer.cs" />
     <Compile Include="DTO\Torrent\CategoryInfo.cs" />
     <Compile Include="DTO\Torrent\GlobalTransferInfo.cs" />
+    <Compile Include="DTO\Torrent\TorrentContent.cs" />
     <Compile Include="DTO\Torrent\TorrentFile.cs" />
     <Compile Include="DTO\Torrent\TorrentInfo.cs" />
+    <Compile Include="DTO\Torrent\TorrentPeer.cs" />
     <Compile Include="DTO\Torrent\TorrentProperties.cs" />
+    <Compile Include="DTO\Torrent\TorrentTracker.cs" />
     <Compile Include="DTO\Torrent\TrackerInfo.cs" />
     <Compile Include="DTO\Torrent\WebSeedInfo.cs" />
     <Compile Include="GlobalTransfer\GlobalTransferApi.cs" />

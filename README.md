@@ -1,4 +1,4 @@
-# qBittorrent .NET Wrapper
+# qBittorrent 5.0+ .NET Wrapper
 
 A fully-featured **.NET Framework 4.8.1 library** for interacting with the [qBittorrent Web API](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-%28qBittorrent-5.0%29). Designed for developers who want **type-safe, asynchronous access** to qBittorrent from .NET applications.
 

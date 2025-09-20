@@ -31,6 +31,12 @@ namespace Qbittorrent_dotnet.App
             return await GetJsonAsync<BuildInfo>($"{General.AppApiUrl}buildInfo").ConfigureAwait(false);
         }
 
+        public async Task ShutdownAsync()
+        {
+            var response = await PostFormAsync($"{General.AppApiUrl}shutdown", null).ConfigureAwait(false);
+            response.EnsureSuccessStatusCode();
+        }
+
         public async Task<Preferences> GetPreferencesAsync()
         {
             return await GetJsonAsync<Preferences>($"{General.AppApiUrl}preferences").ConfigureAwait(false);

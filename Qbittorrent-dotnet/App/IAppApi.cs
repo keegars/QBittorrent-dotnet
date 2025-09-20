@@ -20,6 +20,11 @@ namespace Qbittorrent_dotnet.App
         /// <returns>BuildInfo object containing build details.</returns>
         Task<BuildInfo> GetBuildInfoAsync();
 
+        /// <summary>
+        /// Shuts down the qBittorrent application.
+        /// </summary>
+        Task ShutdownAsync();
+
         /// <summary>Retrieves all application preferences.</summary>
         /// <returns>Preferences object containing current settings.</returns>
         Task<Preferences> GetPreferencesAsync();

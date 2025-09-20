@@ -51,6 +51,7 @@
     <Compile Include="Category\CategoryApi.cs" />
     <Compile Include="Category\ICategoryApi.cs" />
     <Compile Include="Client\ApiClientBase.cs" />
+    <Compile Include="Constants\General.cs" />
     <Compile Include="DTO\App\BuildInfo.cs" />
     <Compile Include="DTO\App\Preferences.cs" />
     <Compile Include="DTO\Category\Category.cs" />
@@ -72,6 +73,9 @@
     <Compile Include="DTO\Torrent\WebSeedInfo.cs" />
     <Compile Include="GlobalTransfer\GlobalTransferApi.cs" />
     <Compile Include="GlobalTransfer\IGlobalTransferApi.cs" />
+    <Compile Include="Helpers\Attributes\FormIgnoreAttribute.cs" />
+    <Compile Include="Helpers\CachedReflectionMap.cs" />
+    <Compile Include="Helpers\KeyValuePairHelper.cs" />
     <Compile Include="IQBittorrentClient.cs" />
     <Compile Include="Log\ILogApi.cs" />
     <Compile Include="Log\LogApi.cs" />

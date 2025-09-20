@@ -3,16 +3,31 @@ using System.Threading.Tasks;
 
 namespace Qbittorrent_dotnet.App
 {
+    /// <summary>
+    /// Provides information and preferences for the qBittorrent application.
+    /// </summary>
     public interface IAppApi
     {
-        Task<string> GetVersionAsync();
+        /// <summary>Gets the qBittorrent version.</summary>
+        /// <returns>Version string (e.g. "4.3.3")</returns>
+        Task<string> GetAppVersionAsync();
 
+        /// <summary>Gets the Web API version.</summary>
+        /// <returns>Web API version string (e.g. "2.0")</returns>
         Task<string> GetWebApiVersionAsync();
 
+        /// <summary>Gets build information.</summary>
+        /// <returns>BuildInfo object containing build details.</returns>
         Task<BuildInfo> GetBuildInfoAsync();
 
+        /// <summary>Retrieves all application preferences.</summary>
+        /// <returns>Preferences object containing current settings.</returns>
         Task<Preferences> GetPreferencesAsync();
 
-        Task SetPreferencesAsync(Preferences preferences);
+        /// <summary>Sets application preferences.</summary>
+        Task SetPreferencesAsync(Preferences prefs);
+
+        /// <summary>Refreshes the application session settings.</summary>
+        Task RefreshSettingsAsync();
     }
 }

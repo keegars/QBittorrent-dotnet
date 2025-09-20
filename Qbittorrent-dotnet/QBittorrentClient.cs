@@ -49,6 +49,9 @@ namespace Qbittorrent_dotnet
             GlobalTransfer = new GlobalTransferApi(_http, baseUrl, _cookieContainer);
             Categories = new CategoryApi(_http, baseUrl, _cookieContainer);
             Tags = new TagApi(_http, baseUrl, _cookieContainer);
+
+            //Preload reflection cache for DTOs to improve performance on first use
+            Helpers.CachedReflectionMap.PreloadDtoProperties();            
         }
 
         public IAuthApi Auth { get; }
